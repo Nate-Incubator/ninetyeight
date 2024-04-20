@@ -2,4 +2,34 @@
 layout: default
 ---
 
-{{ content }}
+{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y @ %I:%M%P" -%}
+
+<table>
+  <tr>
+    <td>
+      <h3 style="margin-top: 12pt; margin-bottom: 12pt;">{{ page.title }}</h3>
+    </td>
+  </tr>
+  <tr>
+    <td style="display: flex; flex-direction: row; justify-content: space-between;">
+      <div>
+        <p><b>Author:</b> {{ page.author }}</p>
+      </div>
+      <div>
+        <p>{{ page.date | date: date_format }} ({{ page.timezone }})</p>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <hr />
+    </td>
+  </tr>
+  <tr>
+    <td style="text-wrap: wrap;">
+      {{ content }}
+    </td>
+  </tr>
+</table>
+
+<a hx-on:click="window.history.back()" hx-boost="true"><button>↩ Back</button></a>
