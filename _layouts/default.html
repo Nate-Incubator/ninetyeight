@@ -1,20 +1,24 @@
 <!doctype html>
 <html>
     <head>
-        <title>98.css example</title>
+        {% if page.layout == "post" %}
+        <title>Nate Stream Incubator - {{ page.title }}</title>
+        {% else %}
+        <title>Nate Stream Incubator</title>
+        {% endif %}
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="/assets/98/98.css" />
         <link rel="stylesheet" href="/assets/css/main.css" />
+        <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     </head>
 
     <body>
         <div class="container">
             <div class="window main">
                 <div class="title-bar">
-                    <div class="title-bar-text">My First VB4 Program</div>
+          <div class="title-bar-text">{{ page.title }}</div>
                 </div>
                 <div class="window-body">
-                    <p>Hello, world!</p>
                     {{ content }}
                 </div>
             </div>
