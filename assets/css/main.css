@@ -8,3 +8,16 @@
     width: 45%;
     height: 70%;
 }
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("/assets/img/nate_retro_tile.png");
+}
