@@ -2,7 +2,9 @@
 layout: default
 ---
 
-<h5>Welcome to the Nate Stream Incubator!</h5>
+<center>
+  <h4>Welcome to the Nate Stream Incubator!</h4>
+</center>
 
 
 <p>⭐ Recent Posts ⭐:</p>
@@ -13,40 +15,49 @@ layout: default
   {% assign posts = site.posts %}
 {% endif %}
 
-{%- if posts.size > 0 -%}
-  {%- if page.list_title -%}
-  <h5 class="post-list-heading">{{ page.list_title }}</h5>
-  {%- endif -%}
-  <ul class="post-list">
-    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-    {%- for post in posts -%}
-    <li>
-      <span class="post-meta">{{ post.date | date: date_format }} -</span>
-      <a class="post-link" href="{{ post.url | relative_url }}" hx-boost="true">
-        {{ post.title | escape }}
-      </a>
-      {%- if site.show_excerpts -%}
-        {{ post.excerpt }}
-      {%- endif -%}
-    </li>
-    {%- endfor -%}
-  </ul>
+{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
 
-  {% if site.paginate %}
-  <div class="pager">
-    <ul class="pagination">
-      {%- if paginator.previous_page %}
-        <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page" hx-boost="true">{{ paginator.previous_page }}</a></li>
-      {%- else %}
-        <li><div class="pager-edge">•</div></li>
-      {%- endif %}
-        <li><div class="current-page">{{ paginator.page }}</div></li>
-      {%- if paginator.next_page %}
-        <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page" hx-boost="true">{{ paginator.next_page }}</a></li>
-      {%- else %}
-        <li><div class="pager-edge">•</div></li>
-      {%- endif %}
-    </ul>
+{% if posts.size > 0 %}
+  {% if page.list_title %}
+  <h5 class="post-list-heading">{{ page.list_title }}</h5>
+  {% endif %}
+
+  <div class="sunken-panel" style="min-height: 30vh;overflow: scroll;">
+    <table class="interactive" style="width: 100%">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Title</th>
+          <th>Author</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for post in posts %}
+        <tr hx-get="{{ post.url | relative_url }}" hx-target="body" hx-push-url="true">
+            <td>{{ post.date | date: date_format }}</td>
+            <td>{{ post.title | escape }}</td>
+            <td>{{ post.author | escape }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
-  {%- endif %}
-{%- endif -%}
+{% endif %}
+
+{% if site.paginate %}
+<div class="pager">
+  <ul class="pagination">
+    {%- if paginator.previous_page %}
+      <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page" hx-boost="true">{{ paginator.previous_page }}</a></li>
+    {%- else %}
+      <li><div class="pager-edge">•</div></li>
+    {%- endif %}
+      <li><div class="current-page">{{ paginator.page }}</div></li>
+    {%- if paginator.next_page %}
+      <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page" hx-boost="true">{{ paginator.next_page }}</a></li>
+    {%- else %}
+      <li><div class="pager-edge">•</div></li>
+    {%- endif %}
+  </ul>
+</div>
+{%- endif %}

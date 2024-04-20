@@ -1,13 +1,16 @@
 <!doctype html>
 <html>
     <head>
+
         {% if page.layout == "post" %}
         <title>Nate Stream Incubator - {{ page.title }}</title>
         {% else %}
         <title>Nate Stream Incubator</title>
         {% endif %}
+
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <link rel="preload" as="style" href="/assets/css/main.css" type="text/css" />
         <link rel="preload" as="style" href="/assets/98/98.css" type="text/css" />
         <script src="/assets/js/htmx.min.js"></script>
@@ -15,6 +18,10 @@
         <link rel="stylesheet" href="/assets/css/main.css" />
         <link rel="stylesheet" href="/assets/98/98.css" />
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+{% seo %}
+{% feed_meta %}
+
     </head>
 
     <body>
@@ -32,13 +39,13 @@
 
                 <div class="menu-bar">
                   <div>
-                    <u>F</u>ile
+                    <button hx-get="/" hx-target="body" hx-push-url="true"><u>H</u>ome</button>
                   </div>
                   <div>
-                    <u>E</u>dit
+                    <button hx-get="/projects" hx-target="body" hx-push-url="true"><u>P</u>rojects</button>
                   </div>
                   <div>
-                    <u>H</u>elp
+                    <button hx-get="/about" hx-target="body" hx-push-url="true"><u>A</u>bout</button>
                   </div>
                 </div>
 

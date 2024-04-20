@@ -4,4 +4,4 @@ layout: default
 
 {{ content }}
 
-<a hx-on:click="window.history.back()" hx-boost><button>⬅️  Back</button></a>
+<a hx-get="/" hx-target="body" hx-push-url="true"><button>↩ Back</button></a>
