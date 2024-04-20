@@ -10,6 +10,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/Nate-Incubator/ninetyeight"
   spec.license       = "MIT"
 
+  spec.required_ruby_version = "> 2.7.2"
+
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_data|_layouts|_includes|_sass|LICENSE|README|_config\.yml)!i) }
 
   spec.add_runtime_dependency "jekyll", "~> 4.3"
