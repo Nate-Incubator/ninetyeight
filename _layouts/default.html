@@ -7,6 +7,7 @@
         <title>Nate Stream Incubator</title>
         {% endif %}
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preload" as="style" href="/assets/css/main.css" type="text/css" />
         <link rel="preload" as="style" href="/assets/98/98.css" type="text/css" />
         <script src="/assets/js/htmx.min.js"></script>
@@ -25,12 +26,26 @@
                   <div class="title-bar-controls">
                     <button aria-label="Minimize"></button>
                     <button aria-label="Maximize"></button>
-                    <button aria-label="Close"></button>
+                    <a href="/bsod.html"><button aria-label="Close"></button></a>
                   </div>
                 </div>
 
-                <div class="window-body" style="height: 100%;overflow: scroll;">
+                <div class="menu-bar">
+                  <div>
+                    <u>F</u>ile
+                  </div>
+                  <div>
+                    <u>E</u>dit
+                  </div>
+                  <div>
+                    <u>H</u>elp
+                  </div>
+                </div>
+
+                <div class="window-body sunken-panel">
+                  <blockquote>
                     {{ content }}
+                  </blockquote>
                 </div>
 
                 <div class="status-bar">

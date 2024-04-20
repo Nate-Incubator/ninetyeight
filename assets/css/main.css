@@ -6,11 +6,40 @@
     justify-content: center;
 }
 
+@media only screen and (max-width: 767px) {
+  .main {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .main {
+    width: 45%;
+    height: 70%;
+  }
+}
+
 .main {
     display: flex;
     flex-direction: column;
-    width: 45%;
-    height: 70%;
+}
+
+.menu-bar {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 12px;
+    padding-top: 4px;
+    padding-left: 6px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.window-body {
+  height: 100% !important;
+  margin: 6px !important;
+  overflow: scroll !important;
 }
 
 body,
