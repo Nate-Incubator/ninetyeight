@@ -14,6 +14,7 @@
         <link rel="preload" as="style" href="/assets/css/main.css" type="text/css" />
         <link rel="preload" as="style" href="/assets/98/98.css" type="text/css" />
         <script src="/assets/js/htmx.min.js"></script>
+        <script src="/assets/js/preload.min.js"></script>
 
         <link rel="stylesheet" href="/assets/css/main.css" />
         <link rel="stylesheet" href="/assets/98/98.css" />
@@ -24,7 +25,7 @@
 
     </head>
 
-    <body>
+    <body hx-ext="preload">
         <div class="container">
             <div class="window main">
 
@@ -39,13 +40,13 @@
 
                 <div class="menu-bar">
                   <div>
-                    <button hx-get="/" hx-target="body" hx-push-url="true"><u>H</u>ome</button>
+                    <button hx-get="/" hx-target="body" hx-push-url="true" preload="preload:init"><u>H</u>ome</button>
                   </div>
                   <div>
-                    <button hx-get="/projects" hx-target="body" hx-push-url="true"><u>P</u>rojects</button>
+                    <button hx-get="/projects" hx-target="body" hx-push-url="true" preload="preload:init"><u>P</u>rojects</button>
                   </div>
                   <div>
-                    <button hx-get="/about" hx-target="body" hx-push-url="true"><u>A</u>bout</button>
+                    <button hx-get="/about" hx-target="body" hx-push-url="true" preload="preload:init"><u>A</u>bout</button>
                   </div>
                 </div>
 
