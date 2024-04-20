@@ -7,20 +7,37 @@
         <title>Nate Stream Incubator</title>
         {% endif %}
         <meta charset="UTF-8" />
-        <link rel="stylesheet" href="/assets/98/98.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=4" />
+        <link rel="preload" as="style" href="/assets/css/main.css" type="text/css" />
+        <link rel="preload" as="style" href="/assets/98/98.css" type="text/css" />
+
         <link rel="stylesheet" href="/assets/css/main.css" />
+        <link rel="stylesheet" href="/assets/98/98.css" />
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     </head>
 
     <body>
         <div class="container">
             <div class="window main">
+
                 <div class="title-bar">
-          <div class="title-bar-text">{{ page.title }}</div>
+                  <div class="title-bar-text">{{ page.title }}</div>
+                  <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                  </div>
                 </div>
-                <div class="window-body">
+
+                <div class="window-body" style="height: 100%;overflow: scroll;">
                     {{ content }}
                 </div>
+
+                <div class="status-bar">
+                  <p class="status-bar-field">Last Updated: {{ page.date }}</p>
+                  <p class="status-bar-field">D:\site\{{ page.name }}</p>
+                </div>
+
             </div>
         </div>
     </body>
