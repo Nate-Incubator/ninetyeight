@@ -33,7 +33,7 @@ layout: default
       </thead>
       <tbody>
         {% for post in posts %}
-        <tr hx-get="{{ post.url | relative_url }}" hx-target="body" hx-push-url="true" preload="mouseover" preload-images="true">
+        <tr hx-get="{{ post.url | relative_url }}" hx-target="body" hx-push-url="true" preload="preload:init" preload-images="true">
             <td>{{ post.date | date: date_format }}</td>
             <td>{{ post.title | escape }}</td>
             <td>{{ post.author | escape }}</td>
@@ -48,13 +48,13 @@ layout: default
 <div class="pager">
   <ul class="pagination">
     {%- if paginator.previous_page %}
-      <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page" hx-boost="true" preload="mouseover" preload-images="true">{{ paginator.previous_page }}</a></li>
+      <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page" hx-boost="true" preload="preload:init" preload-images="true">{{ paginator.previous_page }}</a></li>
     {%- else %}
       <li><div class="pager-edge">•</div></li>
     {%- endif %}
       <li><div class="current-page">{{ paginator.page }}</div></li>
     {%- if paginator.next_page %}
-      <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page" hx-boost="true" preload="mouseover" preload-images="true">{{ paginator.next_page }}</a></li>
+      <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page" hx-boost="true" preload="preload:init" preload-images="true">{{ paginator.next_page }}</a></li>
     {%- else %}
       <li><div class="pager-edge">•</div></li>
     {%- endif %}
