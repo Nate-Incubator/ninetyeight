@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "ninetyeight"
-  spec.version       = "0.1.6"
+  spec.version       = "0.1.7"
   spec.authors       = ["Bucky Wolfe","Jon-Michael Hartway"] # I added maximize
   spec.email         = ["bucky@sonant.vn","jhartway99@gmail.com"]
 
