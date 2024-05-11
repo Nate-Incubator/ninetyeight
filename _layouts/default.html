@@ -34,7 +34,8 @@
                   <div class="title-bar-text">{{ page.title }}</div>
                   <div class="title-bar-controls">
                     <button aria-label="Minimize"></button>
-                    <button aria-label="Maximize" _="on click toggle .max-size on #window"></button>
+                    <button aria-label="Maximize" _="on click toggle .max-size on #window then hide me then show #restore-button" id="maximize-button"></button>
+                    <button aria-label="Restore" style="display: none;" _="on click toggle .max-size on #window then hide me then show #maximize-button" id="restore-button"></button>
                     <a href="/bsod.html"><button aria-label="Close"></button></a>
                   </div>
                 </div>
