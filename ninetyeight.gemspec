@@ -2,9 +2,9 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "ninetyeight"
-  spec.version       = "0.1.5"
-  spec.authors       = ["Bucky Wolfe"]
-  spec.email         = ["bucky@sonant.vn"]
+  spec.version       = "0.1.6"
+  spec.authors       = ["Bucky Wolfe","Jon-Michael Hartway"] # I added maximize
+  spec.email         = ["bucky@sonant.vn","jhartway99@gmail.com"]
 
   spec.summary       = "Custom Windows-98 themed jekyll theme."
   spec.homepage      = "https://github.com/Nate-Incubator/ninetyeight"

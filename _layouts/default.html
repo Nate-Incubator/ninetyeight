@@ -3,9 +3,9 @@
     <head>
 
         {% if page.layout == "post" %}
-        <title>Nate Stream Incubator - {{ page.title }}</title>
+          <title>Nate Stream Incubator - {{ page.title }}</title>
         {% else %}
-        <title>Nate Stream Incubator</title>
+          <title>Nate Stream Incubator</title>
         {% endif %}
 
         <meta charset="UTF-8" />
@@ -15,6 +15,7 @@
         <link rel="preload" as="style" href="/assets/98/98.css" type="text/css" />
         <script src="/assets/js/htmx.min.js"></script>
         <script src="/assets/js/preload.min.js"></script>
+        <script src="/assets/js/_hyperscript.min.js"></script>
 
         <link rel="stylesheet" href="/assets/css/main.css" />
         <link rel="stylesheet" href="/assets/98/98.css" />
@@ -27,13 +28,13 @@
 
     <body hx-ext="preload">
         <div class="container">
-            <div class="window main">
+            <div class="window main" id="window">
 
                 <div class="title-bar">
                   <div class="title-bar-text">{{ page.title }}</div>
                   <div class="title-bar-controls">
                     <button aria-label="Minimize"></button>
-                    <button aria-label="Maximize"></button>
+                    <button aria-label="Maximize" _="on click toggle .max-size on #window"></button>
                     <a href="/bsod.html"><button aria-label="Close"></button></a>
                   </div>
                 </div>
